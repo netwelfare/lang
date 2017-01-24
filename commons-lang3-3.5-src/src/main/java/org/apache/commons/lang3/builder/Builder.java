@@ -22,6 +22,9 @@ package org.apache.commons.lang3.builder;
  * object in the Builder design pattern. Builders are capable of creating and 
  * configuring objects or results that normally take multiple steps to construct 
  * or are very complex to derive. 
+ * 
+ * 生成器接口被设计成指定一个类作为生成器.在生成器设计模式中的对象。建筑者有能力创造和创造
+ * 配置对象或结果，通常需要多个步骤来构造，或是非常复杂的派生。
  * </p>
  * 
  * <p>
@@ -76,13 +79,14 @@ package org.apache.commons.lang3.builder;
  * 
  * @since 3.0
  */
-public interface Builder<T> {
+public interface Builder<T>
+{
 
-    /**
-     * Returns a reference to the object being constructed or result being 
-     * calculated by the builder.
-     * 
-     * @return the object constructed or result calculated by the builder.
-     */
-    T build();
+	/**
+	 * Returns a reference to the object being constructed or result being 
+	 * calculated by the builder.
+	 * 
+	 * @return the object constructed or result calculated by the builder.
+	 */
+	T build();
 }

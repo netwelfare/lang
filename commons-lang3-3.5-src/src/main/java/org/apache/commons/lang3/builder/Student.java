@@ -20,12 +20,21 @@ public class Student implements Comparable<Object>
 				.append(this.age, student.age).toComparison();
 	}
 
+	public int hashCode()
+	{
+		return new HashCodeBuilder(17, 37).append(name).append(age).append(id).toHashCode();
+	}
+
 	public static void main(String[] args)
 	{
 		Student stu1 = new Student(1, "wxf", 20);
-		Student stu2 = new Student(1, "fxw", 18);
-		int rest = stu1.compareTo(stu2);
-		System.out.println(rest);
+		//		Student stu2 = new Student(1, "wxf", 20);
+		//		int rest = stu1.compareTo(stu2);
+		//		System.out.println(rest);
+		//		System.out.println(stu1.hashCode());
+		//		System.out.println(stu2.hashCode());
+		int temp = HashCodeBuilder.reflectionHashCode(stu1, "name");
+		System.out.println(temp);
 
 	}
 }

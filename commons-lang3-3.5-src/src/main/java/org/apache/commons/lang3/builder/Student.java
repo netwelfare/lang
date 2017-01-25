@@ -25,16 +25,23 @@ public class Student implements Comparable<Object>
 		return new HashCodeBuilder(17, 37).append(name).append(age).append(id).toHashCode();
 	}
 
+	public String toString()
+	{
+		return new ReflectionToStringBuilder(this, ToStringStyle.DEFAULT_STYLE).append("name", name).append("age", age)
+				.append("id", id).toString();
+	}
+
 	public static void main(String[] args)
 	{
 		Student stu1 = new Student(1, "wxf", 20);
+		System.out.println(stu1.toString());
 		//		Student stu2 = new Student(1, "wxf", 20);
 		//		int rest = stu1.compareTo(stu2);
 		//		System.out.println(rest);
 		//		System.out.println(stu1.hashCode());
 		//		System.out.println(stu2.hashCode());
-		int temp = HashCodeBuilder.reflectionHashCode(stu1, "name");
-		System.out.println(temp);
+		//		int temp = HashCodeBuilder.reflectionHashCode(stu1, "name");
+		//		System.out.println(temp);
 
 	}
 }
